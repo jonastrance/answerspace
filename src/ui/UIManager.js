@@ -22,10 +22,18 @@ export class UIManager {
     const container = this.elements.questionContainer;
     const textElement = this.elements.questionText;
 
+    // Cancel any ongoing typewriter
+    this.cancelTypewriter = true;
+    await this.delay(100);
+    this.cancelTypewriter = false;
+
     // Hide previous
     container.classList.remove('visible');
-    
+
     await this.delay(500);
+
+    // Clear previous text
+    textElement.textContent = '';
 
     // Typewriter effect for question
     if (questionData.silent) {
@@ -44,8 +52,9 @@ export class UIManager {
 
   async typewrite(element, text, speed = 50) {
     element.textContent = '';
-    
+
     for (let i = 0; i < text.length; i++) {
+      if (this.cancelTypewriter) return;
       element.textContent += text[i];
       await this.delay(speed + Math.random() * 30);
     }
@@ -90,18 +99,22 @@ export class UIManager {
 
   formatDebugInfo(debug) {
     const lines = [];
-    
+
     if (debug.phase) lines.push(`phase: ${debug.phase}`);
-    if (debug.alignment !== undefined) {
-      lines.push(`alignment: ${debug.alignment.toFixed(2)}`);
+    if (debug.territory) lines.push(`territory: ${debug.territory}`);
+    if (debug.beauty !== undefined) {
+      lines.push(`beauty: ${debug.beauty}`);
     }
-    if (debug.stability !== undefined) {
-      lines.push(`stability: ${debug.stability.toFixed(2)}`);
+    if (debug.freedom !== undefined) {
+      lines.push(`freedom: ${debug.freedom}`);
+    }
+    if (debug.trapped) {
+      lines.push(`<span style="color: #8b4049">trapped: ${debug.trapped}</span>`);
     }
     if (debug.contradictionLevel !== undefined) {
       lines.push(`inconsistency: ${debug.contradictionLevel.toFixed(2)}`);
     }
-    
+
     return lines.join('<br>');
   }
 
