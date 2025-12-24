@@ -1,0 +1,39 @@
+{
+  "contextWindow": {
+    "maxTokens": 4096,
+    "tokensPerCharacter": 0.25,
+    "softLimit": 0.8,
+    "hardLimit": 1.0
+  },
+  "decay": {
+    "algorithm": "exponential",
+    "halfLifeResponses": 5,
+    "minRetention": 0.1,
+    "reinforcementBonus": 0.3,
+    "repetitionThreshold": 0.7
+  },
+  "visualization": {
+    "recentMemoryOpacity": 1.0,
+    "fadedMemoryOpacity": 0.4,
+    "ancientMemoryOpacity": 0.1,
+    "fragmentationStart": 0.5,
+    "fragmentationSpeed": 0.02,
+    "blurAmount": {
+      "min": 0,
+      "max": 8
+    }
+  },
+  "retention": {
+    "keywordBonus": ["remember", "important", "key", "crucial", "never forget"],
+    "emotionalBonus": ["love", "hate", "fear", "hope", "believe"],
+    "selfReferenceBonus": ["I", "me", "my", "myself"],
+    "bonusAmount": 0.2
+  },
+  "consistency": {
+    "keywordTracking": true,
+    "semanticMatching": true,
+    "contradictionSensitivity": 0.6,
+    "spatialAnomalyTrigger": 0.8
+  }
+}
+

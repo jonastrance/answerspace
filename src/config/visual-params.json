@@ -1,0 +1,62 @@
+{
+  "environment": {
+    "baseParticleDensity": 500,
+    "maxParticleDensity": 2000,
+    "particleSizeRange": [0.02, 0.08],
+    "cameraDistance": 15,
+    "cameraDriftSpeed": 0.0003,
+    "cameraDriftAmplitude": 2,
+    "fogNear": 5,
+    "fogFar": 50,
+    "backgroundColor": "#0a0a0c"
+  },
+  "responseMapping": {
+    "lengthToParticleDensity": {
+      "minLength": 10,
+      "maxLength": 500,
+      "minDensity": 0.3,
+      "maxDensity": 1.0
+    },
+    "complexityToNoise": {
+      "minComplexity": 0,
+      "maxComplexity": 1,
+      "minNoise": 0.02,
+      "maxNoise": 0.3
+    },
+    "certaintyToClarity": {
+      "minCertainty": 0,
+      "maxCertainty": 1,
+      "minClarity": 0.2,
+      "maxClarity": 1.0
+    }
+  },
+  "memoryDecay": {
+    "halfLife": 5,
+    "minOpacity": 0.1,
+    "fadeSpeed": 0.01,
+    "fragmentationThreshold": 0.5
+  },
+  "contradictionVisuals": {
+    "glitchIntensity": 0.5,
+    "geometricDistortion": 0.3,
+    "colorShift": 0.2
+  },
+  "transitions": {
+    "questionFadeIn": 2000,
+    "responseFadeIn": 1500,
+    "environmentShift": 3000,
+    "cameraTransition": 5000
+  },
+  "colors": {
+    "primary": "#e8e6e3",
+    "secondary": "#6b6b6b",
+    "accent": "#8b7355",
+    "error": "#8b4049",
+    "memory": {
+      "recent": "#a8a6a3",
+      "fading": "#5a5a5a",
+      "ancient": "#2a2a2a"
+    }
+  }
+}
+

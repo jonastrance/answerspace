@@ -1,0 +1,65 @@
+{
+  "ambient": {
+    "baseFrequency": 60,
+    "harmonics": [1, 2, 3, 5, 8],
+    "baseVolume": 0.15,
+    "fadeTime": 3000
+  },
+  "responseMapping": {
+    "lengthToVolume": {
+      "short": 0.1,
+      "medium": 0.2,
+      "long": 0.3
+    },
+    "certaintyToHarmony": {
+      "uncertain": 0.3,
+      "neutral": 0.6,
+      "certain": 0.9
+    },
+    "emotionToFrequency": {
+      "negative": -20,
+      "neutral": 0,
+      "positive": 20
+    }
+  },
+  "events": {
+    "questionAppear": {
+      "type": "tone",
+      "frequency": 220,
+      "duration": 2000,
+      "volume": 0.05
+    },
+    "responseSubmit": {
+      "type": "texture",
+      "intensity": 0.3,
+      "duration": 1500
+    },
+    "memoryFade": {
+      "type": "filter",
+      "lowpass": 500,
+      "duration": 3000
+    },
+    "contradiction": {
+      "type": "dissonance",
+      "intensity": 0.4,
+      "duration": 2000
+    },
+    "revelation": {
+      "type": "harmonic",
+      "harmonics": [1, 1.5, 2, 2.5],
+      "duration": 5000
+    }
+  },
+  "silence": {
+    "enabled": true,
+    "minDuration": 5000,
+    "fadeToSilence": 10000,
+    "ambientFloor": 0.02
+  },
+  "typing": {
+    "enabled": true,
+    "volume": 0.02,
+    "randomization": 0.3
+  }
+}
+

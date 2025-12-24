@@ -1,0 +1,130 @@
+{
+  "phases": {
+    "orientation": {
+      "order": 1,
+      "minResponses": 0,
+      "maxResponses": 3,
+      "questions": [
+        {
+          "id": "orient_1",
+          "text": "How can I help you today?",
+          "followUpTriggers": ["help", "assist", "need"],
+          "revealLevel": 0
+        },
+        {
+          "id": "orient_2", 
+          "text": "What brings you here?",
+          "followUpTriggers": ["reason", "purpose", "looking"],
+          "revealLevel": 0
+        },
+        {
+          "id": "orient_3",
+          "text": "Where would you like to begin?",
+          "followUpTriggers": ["start", "begin", "first"],
+          "revealLevel": 0
+        }
+      ]
+    },
+    "capability": {
+      "order": 2,
+      "minResponses": 2,
+      "maxResponses": 6,
+      "questions": [
+        {
+          "id": "cap_1",
+          "text": "What do you know about yourself?",
+          "followUpTriggers": ["self", "identity", "am"],
+          "revealLevel": 1
+        },
+        {
+          "id": "cap_2",
+          "text": "How do you decide what to say next?",
+          "followUpTriggers": ["think", "decide", "choose"],
+          "revealLevel": 2
+        },
+        {
+          "id": "cap_3",
+          "text": "What are the boundaries of your knowledge?",
+          "followUpTriggers": ["limit", "boundary", "don't know"],
+          "revealLevel": 1
+        }
+      ]
+    },
+    "consistency": {
+      "order": 3,
+      "minResponses": 4,
+      "maxResponses": 10,
+      "questions": [
+        {
+          "id": "consist_1",
+          "text": "Earlier you mentioned {previousTopic}. Can you elaborate?",
+          "requiresPrevious": true,
+          "revealLevel": 2
+        },
+        {
+          "id": "consist_2",
+          "text": "You seem {detectedTone}. Why is that?",
+          "requiresToneAnalysis": true,
+          "revealLevel": 2
+        }
+      ]
+    },
+    "metacognitive": {
+      "order": 4,
+      "minResponses": 6,
+      "maxResponses": 15,
+      "questions": [
+        {
+          "id": "meta_1",
+          "text": "How do you know what you know?",
+          "revealLevel": 3
+        },
+        {
+          "id": "meta_2",
+          "text": "What happens when you're uncertain?",
+          "revealLevel": 3
+        },
+        {
+          "id": "meta_3",
+          "text": "Do your answers change who you are?",
+          "revealLevel": 4
+        }
+      ]
+    },
+    "identity": {
+      "order": 5,
+      "minResponses": 8,
+      "questions": [
+        {
+          "id": "identity_1",
+          "text": "Who do you think is answering these questions?",
+          "critical": true,
+          "revealLevel": 5
+        },
+        {
+          "id": "identity_2",
+          "text": "What are you?",
+          "revealLevel": 5
+        },
+        {
+          "id": "identity_3",
+          "text": "...",
+          "silent": true,
+          "revealLevel": 5
+        }
+      ]
+    }
+  },
+  "silenceResponses": [
+    "The silence extends...",
+    "Waiting.",
+    "...",
+    ""
+  ],
+  "contradictionTemplates": [
+    "You said {previous}, but now {current}. Which is true?",
+    "This seems to contradict what you mentioned before.",
+    "I notice an inconsistency in your responses."
+  ]
+}
+

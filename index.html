@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANSWERSPACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="webgl-container"></div>
+    <div id="ui-layer">
+      <div id="question-container">
+        <p id="question-text"></p>
+      </div>
+      <div id="response-container">
+        <label for="response-input" class="sr-only">Your response</label>
+        <textarea id="response-input" placeholder="" rows="3" aria-label="Your response"></textarea>
+        <div id="input-hint">press enter to respond</div>
+      </div>
+      <div id="system-overlay">
+        <div id="token-counter"></div>
+        <div id="context-indicator"></div>
+        <div id="debug-panel"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
